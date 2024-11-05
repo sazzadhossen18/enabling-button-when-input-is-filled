@@ -1,0 +1,35 @@
+
+
+  <input type="text" id="myTextBox" placeholder="Enter text">
+  <button id="myButton" disabled>Submit</button>
+
+
+
+
+
+<script>
+// Get the input and button elements
+const input = document.getElementById('CartDrawer-Note');
+const button = document.getElementById('CartDrawer-Checkout');
+
+
+// Add an event listener to monitor the input field
+input.addEventListener('input', function() {
+    // Enable the button only if the input is not empty
+    if (input.value.trim() !== '') {
+        button.disabled = false;
+    } else {
+        button.disabled = true;
+    }
+});
+
+// Add an event listener for button click
+button.addEventListener('click', function(event) {
+    // Check if the input is empty when button is clicked
+    if (input.value.trim() === '') {
+        event.preventDefault(); // Prevent any default button behavior (if any)
+        alert('Please fill out the Order Note  before submitting.');
+    }
+});
+
+</script>
